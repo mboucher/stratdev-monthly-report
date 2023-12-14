@@ -1,0 +1,11 @@
+.team-member img {
+  max-width: 150px;
+}
+
+.team-member > div {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+
+}
