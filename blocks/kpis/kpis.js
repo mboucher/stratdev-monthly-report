@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 import { getLibs } from '../../scripts/utils.js';
 
 const { createTag } = await import(`${getLibs()}/utils/utils.js`);
@@ -31,6 +32,7 @@ function initTable() {
     const columnHeader = createTag('th', { class: item.key });
     columnHeader.innerText = item.label;
     header.append(columnHeader);
+    return true;
   });
   table.append(header);
   return table;
@@ -66,7 +68,7 @@ function validateResult(item) {
 }
 
 export default async function init(blockEl) {
-  blockEl.classList.add('content','kpi-table-container');
+  blockEl.classList.add('content', 'kpi-table-container');
   const table = initTable();
   const response = await fetch('/kpis.json');
   const kpis = await response.json();
@@ -95,6 +97,7 @@ export default async function init(blockEl) {
       }
     });
     table.append(kpiRow);
+    return true;
   });
   blockEl.append(table);
 }

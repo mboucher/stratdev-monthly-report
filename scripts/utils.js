@@ -38,7 +38,6 @@ export const [setLibs, getLibs] = (() => {
  */
 
 export function decorateArea(area = document) {
-
   // LCP image decoration
   (function decorateLCPImage() {
     const lcpImg = area.querySelector('img');

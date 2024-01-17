@@ -1,9 +1,9 @@
 {
-  "name": "@adobecom/college",
+  "name": "@stratdev/monthly-report",
   "private": true,
   "type": "module",
   "version": "1.0.0",
-  "description": "Website foundation technology.",
+  "description": "Worldwide Strategic Development Monthly Report.",
   "scripts": {
     "test": "wtr \"./test/**/*.test.js\" --node-resolve --port=2000 --coverage",
     "test:watch": "npm test -- --watch",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adobecom/college.git"
+    "url": "git+https://github.com/mboucher/stratdev-monthly-report.git"
   },
   "author": "Adobe",
   "license": "Apache License 2.0",
   "bugs": {
-    "url": "https://github.com/adobecom/college/issues"
+    "url": "https://github.com/mboucher/stratdev-monthly-report/issues"
   },
-  "homepage": "https://github.com/adobecom/college#readme",
+  "homepage": "https://github.com/mboucher/stratdev-monthly-report#readme",
   "devDependencies": {
     "@babel/core": "7.17.7",
     "@babel/eslint-parser": "7.17.0",
