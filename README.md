@@ -1,5 +1,5 @@
 # Strategic Development Monthly Report
-This Milo site is used to host the monthly reports created by the Strategic Development team.
+This Milo site is used to host the monthly reports managed by the Strategic Development team.
 
 ## Developing
 1. Install the [Helix CLI](https://github.com/adobe/helix-cli): `sudo npm install -g @adobe/helix-cli`
