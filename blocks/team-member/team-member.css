@@ -19,3 +19,10 @@
 .team-member > div > div:nth-child(2) {
   padding: 2px 16px;
 }
+
+
+.team-member > div > div:nth-child(2) p {
+  padding: 0;
+  margin: 0;
+  font-size: medium;
+}
