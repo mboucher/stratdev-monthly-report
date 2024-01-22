@@ -1,3 +1,3 @@
-export default async function init(blockEl) {
-  //blockEl.classList.add('content');
+export default async function init() {
+  // blockEl.classList.add('content');
 }
