@@ -91,6 +91,11 @@
   order: 1;
 }
 
+.banner .detail-laem {
+  font-weight:bolder;
+  text-transform: uppercase;
+}
+
 .banner .banner-media :is(img, video) {
   display: block;
   width: 200px;

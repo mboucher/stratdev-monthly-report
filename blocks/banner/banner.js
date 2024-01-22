@@ -20,7 +20,7 @@ const { decorateBlockBg, getBlockSize } = await import(`${getLibs()}/utils/decor
 
 const blockTypeSizes = {
   marquee: {
-    small: ['xl', 'l', 'laem'],
+    small: ['xxl', 'l', 'laem'],
     medium: ['xl', 'm', 'm'],
     large: ['xxl', 'xl', 'l'],
     xlarge: ['xxl', 'xl', 'l'],
