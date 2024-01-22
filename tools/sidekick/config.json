@@ -15,63 +15,12 @@
       ]
     },
     {
-      "id": "tools",
-      "title": "Tools",
-      "isContainer": true
-    },
-    {
-      "containerId": "tools",
-      "id": "localize",
-      "title": "Localize",
-      "environments": [
-        "edit"
-      ],
-      "url": "https://milo.adobe.com/tools/loc/index.html",
-      "passReferrer": true,
+      "id": "generate-variations",
+      "title": "Generate Variations",
+      "url": "https://experience.adobe.com/aem/generate-variations",
       "passConfig": true,
-      "excludePaths": [ "/**" ],
-      "includePaths": [ "**/:x**" ]
-    },
-    {
-      "containerId": "tools",
-      "title": "Check Schema",
-      "id": "checkschema",
-      "environments": ["prod"],
-      "event": "check-schema",
-      "excludePaths": [
-        "/tools**",
-        "*.json"
-      ]
-    },
-    {
-      "containerId": "tools",
-      "title": "Preflight",
-      "id": "preflight",
-      "environments": [
-        "dev",
-        "preview",
-        "live"
-      ],
-      "event": "preflight"
-    },
-    {
-      "containerId": "tools",
-      "id": "locales",
-      "title": "Locales",
-      "environments": [
-        "edit",
-        "dev",
-        "preview",
-        "live"
-      ],
-      "isPalette": true,
-      "passConfig": true,
-      "passReferrer": true,
-      "paletteRect": "top: auto; bottom: 25px; left: 75px; height: 388px; width: 360px;",
-      "url": "https://milo.adobe.com/tools/locale-nav",
-      "includePaths": [
-        "**.docx**"
-      ]
+      "environments": ["preview","live", "edit"],
+      "includePaths": ["**.docx**"]
     }
   ]
 }

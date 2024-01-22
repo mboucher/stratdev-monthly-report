@@ -14,8 +14,8 @@ const tableHeader = {
       label: 'Outcomes',
     },
     {
-      key: 'target',
-      label: '2023 Target',
+      key: 'FY24 target',
+      label: 'FY24 Target',
     },
     {
       key: 'ytd',

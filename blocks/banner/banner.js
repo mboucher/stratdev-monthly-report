@@ -73,12 +73,12 @@ export default async function init(el) {
   const media = foreground.querySelector(':scope > div:not([class])');
 
   if (media) {
-    media.classList.add('media');
+    media.classList.add('banner-media');
     if (!media.querySelector('video, a[href*=".mp4"]')) decorateImage(media);
   }
 
   const firstDivInForeground = foreground.querySelector(':scope > div');
-  if (firstDivInForeground?.classList.contains('media')) el.classList.add('row-reversed');
+  if (firstDivInForeground?.classList.contains('banner-media')) el.classList.add('row-reversed');
 
   const size = getBlockSize(el);
   decorateText(text, size);
