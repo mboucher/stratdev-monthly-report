@@ -77,7 +77,7 @@ export default async function init(blockEl) {
     const kpiRow = createTag('tr', { class: 'kpi-row' });
     tableHeader.rows.forEach((rowElement) => {
       const kpiColumn = createTag('td', { class: rowElement.key });
-      if (rowElement.key === 'categories') {
+      if (rowElement.key === 'Categories') {
         if (item.categories.length > 0) {
           const spanCount = getSpanCount(kpis.data, index);
           const attr = document.createAttribute('rowspan');
