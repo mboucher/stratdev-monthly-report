@@ -14,14 +14,12 @@
 * Card Horizontal - v1.0
 */
 
-import { getLibs } from '../../scripts/utils.js';
-
-const { createTag } = await import(`${getLibs()}/utils/utils.js`);
+import { createTag } from '../../scripts/utils.js';
 
 function decorateLayout(el) {
-  const foreground = createTag('div', { class: 'foreground' });
-  el.appendChild(foreground);
-  return foreground;
+  const tag = createTag('div', { class: 'foreground' });
+  el.appendChild(tag);
+  return tag;
 }
 
 function decorateImage(block) {
