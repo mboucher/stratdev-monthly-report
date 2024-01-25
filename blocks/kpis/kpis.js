@@ -6,19 +6,19 @@ const { createTag } = await import(`${getLibs()}/utils/utils.js`);
 const tableHeader = {
   rows: [
     {
-      key: 'categories',
+      key: 'Categories',
       label: 'Categories',
     },
     {
-      key: 'outcomes',
+      key: 'Outcomes',
       label: 'Outcomes',
     },
     {
-      key: 'FY24 target',
+      key: 'FY24 Target',
       label: 'FY24 Target',
     },
     {
-      key: 'ytd',
+      key: 'YTD',
       label: 'YTD',
     },
   ],
@@ -40,9 +40,9 @@ function initTable() {
 
 function getSpanCount(array, index) {
   let spanCount = 1;
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 4; i++) {
     if (array[index + i]) {
-      if (array[index + i].categories.length === 0) {
+      if (array[index + i].Categories.length === 0) {
         spanCount += 1;
       }
     }
@@ -51,7 +51,7 @@ function getSpanCount(array, index) {
 }
 
 function validateResult(item) {
-  const result = Math.round((item.ytd / item.target) * 100);
+  const result = Math.round((item.YTD / item['FY24 Target']) * 100);
   if (result >= 100) {
     return 'kpi-green';
   }
@@ -78,7 +78,7 @@ export default async function init(blockEl) {
     tableHeader.rows.forEach((rowElement) => {
       const kpiColumn = createTag('td', { class: rowElement.key });
       if (rowElement.key === 'Categories') {
-        if (item.categories.length > 0) {
+        if (item.Categories.length > 0) {
           const spanCount = getSpanCount(kpis.data, index);
           const attr = document.createAttribute('rowspan');
           attr.value = spanCount;
@@ -87,7 +87,7 @@ export default async function init(blockEl) {
           kpiRow.append(kpiColumn);
         }
       } else {
-        if (rowElement.key === 'ytd') {
+        if (rowElement.key === 'YTD') {
           const attr = document.createAttribute('class');
           attr.value = result;
           kpiColumn.setAttributeNode(attr);
