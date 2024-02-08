@@ -45,6 +45,7 @@ export function decorateArea(area = document) {
   }());
   (function decorateLinks() {
     const insights = area.querySelectorAll('.insights a');
+    console.log(`found ${insights.length} links`);
     insights.forEach((link) => {
       link.setAttribute('target', '_blank');
     });
