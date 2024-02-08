@@ -27,11 +27,11 @@ table td {
 }
 
 .kpi-green {
-  background-color: greenyellow;
+  background-color: rgb(17, 146, 3);
 }
 
 .kpi-red {
-  background-color: red;
+  background-color: rgba(255, 0, 0, 0.688);
 }
 
 .kpi-yellow {
@@ -46,4 +46,11 @@ table td {
   font-weight: bolder;
 }
 
+.kpi-outcome {
+  font-size: smaller;
+}
+
+.kpi-value {
+  width: 100px;
+}
 

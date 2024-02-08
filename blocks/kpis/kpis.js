@@ -100,6 +100,11 @@ export default async function init(blockEl) {
           attr.value = result;
           kpiColumn.setAttributeNode(attr);
         }
+        if (rowElement.key !== 'Outcomes') {
+          kpiColumn.classList.add('kpi-value');
+        } else {
+          kpiColumn.classList.add('kpi-outcome');
+        }
         kpiColumn.innerText = item[rowElement.key];
         kpiRow.append(kpiColumn);
       }
