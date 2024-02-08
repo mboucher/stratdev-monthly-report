@@ -14,12 +14,20 @@ const tableHeader = {
       label: 'Outcomes',
     },
     {
-      key: 'FY24 Target',
-      label: 'FY24 Target',
+      key: 'QTD',
+      label: 'QTD',
+    },
+    {
+      key: 'Q1 Target',
+      label: 'Q1 Target',
     },
     {
       key: 'YTD',
       label: 'YTD',
+    },
+    {
+      key: 'FY24 Target',
+      label: 'FY24 Target',
     },
   ],
 
@@ -51,7 +59,7 @@ function getSpanCount(array, index) {
 }
 
 function validateResult(item) {
-  const result = Math.round((item.YTD / item['FY24 Target']) * 100);
+  const result = Math.round((item.QTD / item['Q1 Target']) * 100);
   if (result >= 100) {
     return 'kpi-green';
   }
@@ -87,7 +95,7 @@ export default async function init(blockEl) {
           kpiRow.append(kpiColumn);
         }
       } else {
-        if (rowElement.key === 'YTD') {
+        if (rowElement.key === 'QTD') {
           const attr = document.createAttribute('class');
           attr.value = result;
           kpiColumn.setAttributeNode(attr);
