@@ -43,6 +43,10 @@ export function decorateArea(area = document) {
     const lcpImg = area.querySelector('img');
     lcpImg?.removeAttribute('loading');
   }());
+  (function decorateLinks() {
+    const insights = area.querySelector('.insights a');
+    insights?.setAttribute('target', '_blank');
+  }());
 }
 export function createTag(tag, attributes, html) {
   const el = document.createElement(tag);
