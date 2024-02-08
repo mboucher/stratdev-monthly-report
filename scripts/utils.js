@@ -44,11 +44,13 @@ export function decorateArea(area = document) {
     lcpImg?.removeAttribute('loading');
   }());
   (function decorateLinks() {
-    const insights = area.querySelectorAll('.insights a');
-    console.log(`found ${insights.length} links`);
-    insights.forEach((link) => {
-      link.setAttribute('target', '_blank');
-    });
+    const container = area.querySelector('#category-insights');
+    if (container) {
+      const insights = container.parentNode.querySelectorAll('a');
+      insights.forEach((link) => {
+        link.setAttribute('target', '_blank');
+      });
+    };
   }());
 }
 export function createTag(tag, attributes, html) {
