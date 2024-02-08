@@ -22,7 +22,7 @@ const LIBS = '/libs';
 const CONFIG = {
   // codeRoot: '',
   // contentRoot: '',
-  // imsClientId: 'college',
+  imsClientId: 'acp-cs-pdm-webapp-prod',
   // geoRouting: 'off',
   // fallbackRouting: 'off',
   decorateArea,
