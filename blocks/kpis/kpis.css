@@ -27,15 +27,15 @@ table td {
 }
 
 .kpi-green {
-  background-color: rgb(17, 146, 3);
+  background-color: rgba(17, 146, 3, 0.515);
 }
 
 .kpi-red {
-  background-color: rgba(255, 0, 0, 0.688);
+  background-color: rgba(255, 0, 0, 0.515);
 }
 
 .kpi-yellow {
-  background-color: yellow;
+  background-color: rgba(255, 255, 0, 0.515);
 }
 
 .kpi-table-container {
@@ -51,6 +51,11 @@ table td {
 }
 
 .kpi-value {
+  text-align: center;
   width: 100px;
+}
+
+.kpi-value-header {
+  text-align: center;
 }
 

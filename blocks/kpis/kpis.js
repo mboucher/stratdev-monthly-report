@@ -36,8 +36,11 @@ const tableHeader = {
 function initTable() {
   const table = createTag('table', { class: 'kpi-table' });
   const header = createTag('tr', { class: 'kpi-table-header' });
-  tableHeader.rows.map((item) => {
+  tableHeader.rows.map((item, index) => {
     const columnHeader = createTag('th', { class: item.key });
+    if (index > 1) {
+      columnHeader.classList.add('kpi-value-header');
+    }
     columnHeader.innerText = item.label;
     header.append(columnHeader);
     return true;
