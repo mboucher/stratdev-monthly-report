@@ -96,6 +96,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   flex-grow: 1;
+  min-height: 190px;
 }
 
 .insight-card-horizontal .foreground .card-block .card-image {
@@ -271,4 +272,6 @@
   .three-up .insight-card-horizontal.tile .foreground .card-block .card-image img {
     margin-left: var(--spacing-s);
   }
+
+
 }
