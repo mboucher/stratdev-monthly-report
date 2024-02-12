@@ -2,6 +2,7 @@
 import { getLibs } from '../../scripts/utils.js';
 
 const { createTag } = await import(`${getLibs()}/utils/utils.js`);
+let currentIndex = 0;
 
 const tableHeader = {
   rows: [
@@ -51,13 +52,17 @@ function initTable() {
 
 function getSpanCount(array, index) {
   let spanCount = 1;
-  for (let i = 0; i < 4; i++) {
+  let trigger = false;
+  for (let i = 1; i < 4; i++) {
     if (array[index + i]) {
-      if (array[index + i].Categories.length === 0) {
+      if (array[index + i].Categories.length === 0 && trigger === false) {
         spanCount += 1;
+      } else {
+        trigger = true;
       }
     }
   }
+  currentIndex += spanCount;
   return spanCount;
 }
 
@@ -83,14 +88,14 @@ export default async function init(blockEl) {
   const table = initTable();
   const response = await fetch('/kpis.json');
   const kpis = await response.json();
-  kpis.data.map((item, index) => {
+  kpis.data.map((item) => {
     const result = validateResult(item);
     const kpiRow = createTag('tr', { class: 'kpi-row' });
     tableHeader.rows.forEach((rowElement) => {
       const kpiColumn = createTag('td', { class: rowElement.key });
       if (rowElement.key === 'Categories') {
         if (item.Categories.length > 0) {
-          const spanCount = getSpanCount(kpis.data, index);
+          const spanCount = getSpanCount(kpis.data, currentIndex);
           const attr = document.createAttribute('rowspan');
           attr.value = spanCount;
           kpiColumn.setAttributeNode(attr);
