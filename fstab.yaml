@@ -4,6 +4,6 @@
 # 2. Google Drive is no longer allowed for production Adobe projects.
 
 #/: https://adobe-my.sharepoint.com/:f:/r/personal/mboucher_adobe_com/oneCloud2017/Shared%20Documents/stratdev-report?csf=1&web=1&e=9GhTjT
-
+#/: https://adobe.sharepoint.com/:f:/r/sites/DVAstratdev/Shared%20Documents/02%20-%20Monthly%20Reports/Website?csf=1&web=1&e=vUc77V
 mountpoints:
   /: https://adobe.sharepoint.com/:f:/r/sites/DVAstratdev/Shared%20Documents/02%20-%20Monthly%20Reports/Website?csf=1&web=1&e=vUc77V
