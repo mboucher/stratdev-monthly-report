@@ -68,6 +68,12 @@ function getSpanCount(array, index) {
 
 function validateResult(item) {
   const result = Math.round((item.QTD / item['Q1 Target']) * 100);
+
+  // eslint-disable-next-line radix
+  if (parseInt(item.QTD) === 0 && parseInt(item['Q1 Target']) === 0) {
+    return 'kpi-green';
+  }
+
   if (result >= 100) {
     return 'kpi-green';
   }
