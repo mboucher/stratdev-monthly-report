@@ -34,10 +34,30 @@ const tableHeader = {
 
 };
 
+function getCurrentFiscalQuarter() {
+  const today = new Date();
+  const month = today.getMonth() + 1; // Adding 1 since getMonth() returns zero-based index
+
+  // Define the fiscal quarters based on the starting month (December)
+  if (month >= 12 && month <= 2) {
+    return 1; // Q1: December, January, February
+  } if (month >= 3 && month <= 5) {
+    return 2; // Q2: March, April, May
+  } if (month >= 6 && month <= 8) {
+    return 3; // Q3: June, July, August
+  }
+  return 4; // Q4: September, October, November
+}
+
 function initTable() {
   const table = createTag('table', { class: 'kpi-table' });
   const header = createTag('tr', { class: 'kpi-table-header' });
+  const currentQuarter = getCurrentFiscalQuarter();
   tableHeader.rows.map((item, index) => {
+    if (index === 3) {
+      item.key = `Q${currentQuarter} Target`;
+      item.label = `Q${currentQuarter} Target`;
+    }
     const columnHeader = createTag('th', { class: item.key });
     if (index > 1) {
       columnHeader.classList.add('kpi-value-header');
@@ -67,10 +87,11 @@ function getSpanCount(array, index) {
 }
 
 function validateResult(item) {
-  const result = Math.round((item.QTD / item['Q1 Target']) * 100);
+  const currentQuarter = getCurrentFiscalQuarter();
+  const result = Math.round((item.QTD / item[`Q${currentQuarter} Target`]) * 100);
 
   // eslint-disable-next-line radix
-  if (parseInt(item.QTD) === 0 && parseInt(item['Q1 Target']) === 0) {
+  if (parseInt(item.QTD) === 0 && parseInt(item[`Q${currentQuarter} Target`]) === 0) {
     return 'kpi-green';
   }
 
@@ -92,12 +113,17 @@ function validateResult(item) {
 export default async function init(blockEl) {
   blockEl.classList.add('content', 'kpi-table-container');
   const table = initTable();
-  const response = await fetch('/kpis.json');
+  const response = await fetch('/okrs.json');
   const kpis = await response.json();
+  const currentQuarter = getCurrentFiscalQuarter();
   kpis.data.map((item) => {
     const result = validateResult(item);
     const kpiRow = createTag('tr', { class: 'kpi-row' });
-    tableHeader.rows.forEach((rowElement) => {
+    tableHeader.rows.forEach((rowElement, index) => {
+      if (index === 3) {
+        rowElement.key = `Q${currentQuarter} Target`;
+        rowElement.label = `Q${currentQuarter} Target`;
+      }
       const kpiColumn = createTag('td', { class: rowElement.key });
       if (rowElement.key === 'Categories') {
         if (item.Categories.length > 0) {
